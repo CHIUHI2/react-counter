@@ -15,7 +15,7 @@ class Counter extends Component {
                count : prevState.count + 1 
             })
         );
-    };
+    }
     
     onDecrease = () => {
         this.setState(
@@ -23,7 +23,7 @@ class Counter extends Component {
                 count : prevState.count - 1 
             })
         );
-    };
+    }
     
     render() {
         return (
