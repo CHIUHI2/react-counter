@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 
 class CounterGroupSum extends Component {
     render() {
+        const{ sum } = this.props;
+
         return (
             <div>
-                <span>Sum of counter : {this.props.sum}</span>
+                <span>Sum of counter : {sum}</span>
             </div>
         );
     }

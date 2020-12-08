@@ -13,33 +13,29 @@ class Counter extends Component {
         this.setState(
            prevState => ({ 
                count : prevState.count + 1 
-            })
+            }),
+            this.props.increaseSum()
         );
-
-        this.props.increaseSum();
     }
     
     onDecrease = () => {
         this.setState(
             prevState => ({ 
                 count : prevState.count - 1 
-            })
+            }),
+            this.props.decreaseSum()
         );
-
-        this.props.decreaseSum(1);
-    }
-
-    componentWillUnmount = () => {
-        this.props.decreaseSum(this.state.count);
     }
     
     render() {
+        const { count } = this.state;
+
         return (
-            <div>
+            <section>
                 <input type="button" onClick={this.onDecrease} value="-" />
-                <span>{this.state.count}</span>
+                <span>{count}</span>
                 <input type="button" onClick={this.onIncrease} value="+" />
-            </div>
+            </section>
         );
     }
 }
